@@ -1,6 +1,6 @@
 #include <stdio.h>
-//#include <Windows.h>
-//#include <conio.h>
+#include <Windows.h>
+#include <conio.h>
 
 int board[4][4];
 int score = 0;
@@ -21,8 +21,8 @@ void make_map();
 int main() {
 
 	printf("2048 Start!\n");
-	//printf("PRESS ANY KEY\n"); getch();
-	//system("cls");
+	printf("PRESS ANY KEY\n"); getch();
+	system("cls");
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++)
 			board[i][j] = 0;
@@ -32,24 +32,7 @@ int main() {
 	make_map();
 	char option;
 
-	while (scanf("%c", &option) != EOF) {
-
-		move_with_merge(option);
-		draw();
-		if (game_check == 1) {
-			system("cls");
-			printf("Game Over\n");
-			printf("Score: %d \n ", score);
-			return 0;
-		}
-		win_game();
-		if (win_check == 1) {
-			printf("Game Win\n");
-			printf("Score: %d \n ", score);
-		}
-
-	}
-	/*while (1) {
+	while (1) {
 
 		option = _getch();
 		move_with_merge(option);
@@ -68,7 +51,7 @@ int main() {
 		}
 
 
-	}*/
+	}
 	
  }
 
